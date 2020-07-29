@@ -1,0 +1,112 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    @apply overflow-x-hidden bg-gray-700 font-sans w-full h-screen;
+}
+
+main {
+    @apply p-6 mx-auto;
+}
+
+.heading {
+    @apply w-full bg-gray-600 text-white flex flex-col justify-center;
+}
+
+.heading__center {
+    @apply max-w-xl mx-auto text-center;
+}
+
+.heading * {
+    @apply my-3;
+}
+
+.heading h2 {
+    @apply text-xl uppercase;
+}
+
+.heading h1 {
+    @apply text-3xl;
+}
+
+.heading span {
+    width: 50px;
+    height: 5px;
+    @apply bg-gray-800 inline-block mx-auto;
+}
+
+.heading p {
+    @apply text-base;
+}
+
+.top {
+    @apply flex flex-col justify-between;
+}
+
+button {
+    @apply px-6 py-3 border-0 text-center bg-black text-white;
+}
+
+button:hover {
+    @apply bg-gray-900;
+}
+
+.top span.width--sm {
+    @apply text-xl text-white;
+    max-width: 150px;
+}
+
+.cards {
+    @apply grid grid-flow-row grid-cols-3 gap-3;
+}
+
+.card {
+    @apply bg-white rounded-md p-3 flex flex-row justify-between items-center cursor-pointer select-none;
+}
+
+.card:hover {
+    @apply bg-gray-200;
+}
+
+
+.card .card__right{
+    @apply w-10/12;
+}
+
+.rows {
+    @apply py-6 w-full;
+}
+
+.rows ol {
+    counter-reset: section;
+    list-style-type: none;
+}
+
+.rows ol li {
+    @apply bg-white text-3xl text-gray-700 flex flex-row my-4 font-normal;
+    line-height: 4rem;
+}
+
+.rows ol li::before {
+    counter-increment: section;
+    content: counter(section) ". "; 
+    @apply bg-gray-600 text-white text-center w-32 text-5xl; 
+}
+
+.rows ol li::before,
+.rows ol li p {
+    @apply p-3 py-5;
+}
+
+@media screen and ( min-width: 768px ){
+    main {
+        @apply max-w-screen-lg mx-auto;
+    }
+    .heading {
+        min-height: 350px;
+    }
+    .top {
+        @apply flex-row my-6 inline-flex w-full;
+    }
+}
